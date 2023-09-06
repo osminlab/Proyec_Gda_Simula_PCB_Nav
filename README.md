@@ -26,9 +26,9 @@ Este es un proyecto de graduación, realizado en la [Universidad Don Bosco (UDB)
 
 Este repositorio incluye  como producto final lo siguiente:
 
-* **Simulación:** Código fuente escrito en Python de la "Simulacion de trayectoria del Globo de Gran Altitud" haciendo usos de Jupyter Notebooks. [Ver código](https://github.com/osmin-lab/Proyec_Gda_Simula-PCB_Nav/tree/main/code) o revisar en la sigiente ruta `./code/src`.
+* **Simulación:** Código fuente escrito en Python de la "Simulacion de trayectoria del Globo de Gran Altitud" haciendo usos de Jupyter Notebooks. [Ver código](https://github.com/osminlab/Proyec_Gda_Simula_PCB_Nav/tree/main/code) o revisar en la sigiente ruta `./code/src`.
 * **Documento:**  Escrito final del proyecto de graduación desarrollado en $\LaTeX$, se registra académicamente en detalle y de forma formal en que consiste el presente trabajo. Puede ver el documento en PDF si desconoce sobre $\LaTeX$ click [aquí](https://github.com/osminlab/Proyec_Gda_Simula_PCB_Nav/blob/main/document/TrabajoGraduacion_2023_OsminLarreynaga.pdf) o en la siguietne ruta `./document/TrabajoGraduacion.pdf`.
-* **Dimensionamiento subsistema de Navegación:** Se presentan el esquema circuito, layout y vista 3D en Fusion360, además se exportan a Eagle para mayor compatibilidad. [Ver propuesta](https://github.com/osmin-lab/Proyec_Gda_Simula-PCB_Nav/tree/main/hardware) o revisar en la sigiente ruta `./hardware`.
+* **Dimensionamiento subsistema de Navegación:** Se presentan el esquema circuito, layout y vista 3D en Fusion360, además se exportan a Eagle para mayor compatibilidad. [Ver propuesta](https://github.com/osminlab/Proyec_Gda_Simula_PCB_Nav/tree/main/hardware) o revisar en la sigiente ruta `./hardware`.
 
 Todo lo anterior, fue divido en el actual directorio en sub-carpetas. Cada una continene el relativo producto final, revisesé según necesidad de consulta.
 
@@ -52,7 +52,7 @@ A continuación se detalla de forma breve el contenido de cada subcarpeta.
 
 * **Carpeta document**: En `./document` se concentran todos los archivos relativos al documento final del trabajo que cualquier **${\LaTeX}$ editor** puede usar para mostrar el trabajo presente. El archivo principal esta localizado en `document/main_TrabajoGraduacion.tex`, este llama a todo los demás archivos relativos del documento incluyendo tablas, imagenes, capítulos, portada, etc.
 
-    > **NOTA:** [main_TrabajoGraduacion.tex](https://github.com/osmin-lab/Proyec_Gda_Simula-PCB_Nav/blob/main/document/main_TrabajoGraduacion.tex) es el archivo principal del documento. El PDF final se puede encontrar [Aquí](https://github.com/osminlab/Proyec_Gda_Simula_PCB_Nav/blob/main/document/TrabajoGraduacion_2023_OsminLarreynaga.pdf). Este archivo es el responsable que el compilador de  $\LaTeX$ genere el documento. Sin embargo, para mantenener una código limpio, las secciones principales están localizadas en carpeta [sections](https://github.com/osmin-lab/Proyec_Gda_Simula-PCB_Nav/tree/main/document/sections).
+    > **NOTA:** [main_TrabajoGraduacion.tex](https://github.com/osminlab/Proyec_Gda_Simula_PCB_Nav/blob/main/document/main_TrabajoGraduacion.tex) es el archivo principal del documento. El PDF final se puede encontrar [Aquí](https://github.com/osminlab/Proyec_Gda_Simula_PCB_Nav/blob/main/document/TrabajoGraduacion_2023_OsminLarreynaga.pdf). Este archivo es el responsable que el compilador de  $\LaTeX$ genere el documento. Sin embargo, para mantenener una código limpio, las secciones principales están localizadas en carpeta [sections](https://github.com/osminlab/Proyec_Gda_Simula_PCB_Nav/tree/main/document/sections).
 
 * **Carpeta hardware**: En el folder  `./hardware`  se encuentran el dimensionamiento de subsistema de navegación. 
 
