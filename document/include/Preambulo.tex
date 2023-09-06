@@ -1,0 +1,200 @@
+% ---  GENERALIDADES DEL DOCUMENTO  ---
+\documentclass[12pt,openany]{book}
+\usepackage{lipsum} % Genera Texto de Relleno
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,spanish,es-lcroman]{babel}
+\usepackage{bookman} % Fuente "Bookman" para todo el documento
+\usepackage[letterpaper, top=3cm, bottom=3cm, right=2.54cm, left=2.54cm]{geometry}
+\usepackage{afterpage}
+\usepackage[
+  pdftex,
+  pdfauthor={\NombreAutor{}},
+  pdftitle={Trabajo de Fin de Grado},
+  pdfborder={0 0 0}
+]{hyperref}
+\hypersetup{
+    % bookmarks       = true,             % Show the bookmarks
+	unicode         = true,             % Use Unicode                 
+	pdftoolbar      = true,             % Show Acrobat’s toolbar
+	pdfmenubar      = true,             % Show Acrobat’s menu
+	pdffitwindow    = false,            % Window fit to page when opened
+	pdfstartview    = {FitH},           % Fit the page width to the window
+	pdfnewwindow    = true,             % Open the links in a new PDF window
+	colorlinks      = true,             % Use colored links
+	linkcolor       = blue,             % Internal links color
+	citecolor       = green,            % Bibliographic links color
+	filecolor       = cyan,             % File links color
+	urlcolor        = cyan           % External links color
+}
+\usepackage{pdfpages} % Permite cargar pdf ajenos a Latex
+\usepackage{url}
+\usepackage[stable]{footmisc} % Para pie de páginas
+\usepackage{parskip} % para separar párrafos con espacio.
+\usepackage{lscape} % Permite rotar el contenido y la pagina
+\usepackage{pdflscape} % Permite de forma fisica la pagina al exportar
+\usepackage{rotating}
+\usepackage{pgfgantt} % Permite crear diagramas de Gannt
+% ---  GENERALIDADES DEL DOCUMENTO  ---
+
+
+% --- ECUACONES, IMAGES, FIGURAS, TABLAS  ---
+\usepackage{amsfonts,amsgen,amsmath,amssymb} 
+\decimalpoint
+\usepackage{graphicx} % Permite el uso de imagenes
+% \usepackage{caption}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}} % Cambiar el nombre para las tablas en español
+% \usepackage{subcaption}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{colortbl,longtable} %Tablas
+% --- ECUACONES, IMAGES, FIGURAS, TABLAS  ---
+
+
+% --- BIBLIOGRAPHY ---
+\usepackage[
+  backend=biber,
+  style=ieee,
+  sorting=none
+]{biblatex}
+\addbibresource{document/include/bibliography.bib}
+% \title{Gestión de bibliografía: paquete \texttt{biblatex}}
+\usepackage{csquotes} % Insertar frases o citas
+% --- BIBLIOGRAPHY ---
+
+
+% --- GLOSARIO, ACRÓNIMOS (ABREVITURAS), NOMENCLATURA ---
+% \usepackage[toc, acronym]{glossaries} 
+% \makeglossaries
+% \input{document/include/glosario}
+%  \loadglsentries{document/include/glosario} % cargar las entradas del glosario
+% \usepackage[printonlyused]{acronym} % Nomenclatura
+% --- GLOSARIO, ACRÓNIMOS (ABREVITURAS), NOMENCLATURA ---
+
+
+% --- ENCABEZADOS, PIES DE PÁGINA ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\setlength{\headheight}{1.5\headheight}
+\cfoot{\thepage}
+
+% --- ENCABEZADOS, PIES DE PÁGINA ---
+
+% --- INDICE GENERAL  ---
+\addto\captionsspanish{ \renewcommand{\contentsname}
+  {Índice general} }
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+% --- INDICE GENERAL  ---
+
+
+%% Borrar si no funciona 
+\usepackage{rotating}
+
+% --- ENCABEZADOS DE CAPITULOS Y SECCIONES  ---
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+% --- ENCABEZADOS DE CAPITULOS Y SECCIONES  ---
+
+
+% --- ANEXOS  ---
+\usepackage{appendix}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{}
+% --- ANEXOS  ---
+
+
+%%-----------------------------------------------
+%% Páginas en blanco sin cabecera:
+%%-----------------------------------------------
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{\esperiod}{-1}}
+\makeatletter
+\addto\shorthandsspanish{\let\esperiod\es@period@code}
+
+\def\clearpage{
+  \ifvmode
+  \ifnum \@dbltopnum =\m@ne
+  \ifdim \pagetotal <\topskip
+  \hbox{}
+  \fi
+  \fi
+  \fi
+  \newpage
+  \thispagestyle{empty}
+  \write\m@ne{}
+  \vbox{}
+  \penalty -\@Mi
+}
+\makeatother
+
+
+
+
+%%-----------------------------------------------
+%% Estilos código de lenguajes: Consola, C, C++ y Python
+%%-----------------------------------------------
+\usepackage{color}
+
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+\usepackage{listings}
+\lstset{ frame=Ltb,
+  framerule=0pt,
+  aboveskip=0.5cm,
+  framextopmargin=3pt,
+  framexbottommargin=3pt,
+  framexleftmargin=0.4cm,
+  framesep=0pt,
+  rulesep=.0pt,
+  backgroundcolor=\color{gray97},
+  rulesepcolor=\color{black},
+  %
+  stringstyle=\ttfamily,
+  showstringspaces = false,
+  basicstyle=\scriptsize\ttfamily,
+  commentstyle=\color{gray45},
+  keywordstyle=\bfseries,
+  %
+  numbers=left,
+  numbersep=6pt,
+  numberstyle=\tiny,
+  numberfirstline = false,
+  breaklines=true,
+}
+
+% Puedes añadir más lenguajes siguiendo un estilo similar al de Python,
+% o hacerte tu propio estilo.
+% Enlace con alguna ayudita: www.overleaf.com/learn/latex/Code_listing
+\lstnewenvironment{listing}[1][]
+                  {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+                    \lstdefinestyle{consola}{
+                                    basicstyle=\scriptsize\bf\ttfamily,
+                                    backgroundcolor=\color{gray97}}
+                    \lstdefinestyle{C}{
+                                    basicstyle=\scriptsize,
+                                    frame=single,
+                                    language=C,
+                                    numbers=left}
+                    \lstdefinestyle{C++}{
+                                    basicstyle=\small,
+                                    frame=single,
+                                    backgroundcolor=\color{gray75},
+                                    language=C++,
+                                    numbers=left}
+                    \lstdefinestyle{Python}{
+                                    basicstyle=\small,
+                                    frame=single,
+                                    backgroundcolor=\color{gray75},
+                                    language=Python,
+                                    numbers=left}
+                                \makeatother

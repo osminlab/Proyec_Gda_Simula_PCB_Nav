@@ -1,0 +1,84 @@
+%%-----------------------------------------------
+%% Cargar datos relativos al Trabajo de Graduación UDB:
+\input{document/sections/_Datos_ProyectoGraduación}
+
+%%-----------------------------------------------
+%% Importar Preámbulo:
+\input{document/include/Preambulo}
+\input{document/include/glosario}
+
+
+%%-----------------------------------------------
+%% Estructura Documento:
+\begin{document}
+
+%%-----------------------------------------------
+%% Hojas de Presentación:
+%% Numeración romana:
+\frontmatter
+%% (Portada, hoja de autoridad, etc)
+\input{document/include/Portada}
+%% Dedicatoria y agradecimiento
+\input{document/include/dedicatoria_agradecimientos}
+
+
+%%--------- --------------------------------------
+%%  Indices
+%%-----------------------------------------------
+% Indice general
+\tableofcontents
+% Indice de Figuras
+\renewcommand\listfigurename{Índice de Figuras}
+\listoffigures
+% Indice de Tablas
+\renewcommand\listtablename{Índice de Tablas}
+\listoftables
+% Indice de Código Fuente
+% \renewcommand\lstlistlistingname{Índice de Código Fuente}
+% \lstlistoflistings
+
+
+%%-----------------------------------------------
+%%  Cuerpo del Trabajo:
+%%-----------------------------------------------
+%% Numeración arábiga de aquí en adelante:
+\mainmatter
+% Trabajo de Graduación
+\input{document/sections/00_Resumen}
+\input{document/sections/01_Introduccion}
+\input{document/sections/02_Simulacion}
+\input{document/sections/03_EDA}
+\input{document/sections/04_Dimensionamiento}
+% Finalización de Trabajo
+\input{document/sections/05_Resultados}
+
+% Documento de ayuda que explica los campos soportados por cada tipo de elemento en la bibliografía
+
+% Referencias
+\clearpage
+\renewcommand{\bibfont}{\normalsize}
+\printbibliography[heading=bibintoc, title={Referencias}]
+% Glosario, acrónimos
+% \clearpage
+% \glsaddall
+% \printglossary[type=\acronymtype]
+% \printglossary
+
+%   Nomenclarutas:
+% \newpage
+% \input{document/include/nomenclaturas}
+
+%% Anexos
+\frontmatter % Numeración  romana de aquí en adelante:
+\appendix
+\clearpage
+%\addcontentsline{toc}{chapter}{\annexname}
+\input{document/sections/06_Anexos}
+%%-----------------------------------------------
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,96 @@
+\chapter{Recomendaciones y conclusiones} \label{chp:resultados}
+
+\vspace{0.4cm}
+
+Este capítulo marca el final de este trabajo de graduación. Aquí se presentan las conclusiones obtenidas a partir de esta investigación y se bridan recomendaciones para futuros proyectos de graduación que podrían derivarse de este estudio o ideas nuevas para futuros trabajos de graduación
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Conclusiones} \label{sct:resultados_conclusiones}
+
+Las misiones near-space representan una valiosa fuente para disciplinas STEM (science, technology, engineering y mathematics) debido a que generan pruebas de concepto reales; además,  representa una oportunidad para que países en vías de desarrollo como El Salvador se fomenten y avancen en carreras STEM y también aporta a los objetivos del desarrollo sostenible como \textit{Educación de Calidad}, \textit{Trabajo decente y desarrollo económico} e \textit{Industria, innovación e infraestructura}. A continuación, las conclusiones particulares: 
+
+\begin{itemize}
+    \item La visualización y análisis de datos desempeñaron un papel destacado al permitir comprender y detectar patrones y tendencias subyacentes en los datos simulados. A través de esta exploración detallada, se identificaron factores críticos que influyen en la trayectoria del globo sonda, siendo la presión y la temperatura los dos elementos más destacados de las variables analizadas. La presión, desempeña un papel fundamental en la integridad del globo, se reveló que varía de 1013.25 hPa (1 atm) sobre la superficie de la tierra a un mínimo de 12 hPa en la altitud objetivo de la misión de la simulación, siendo así puntos cruciales a considerar en futuras misiones. De igual manera, el control y monitoreo de la temperatura emerge para futuras misiones como elementos esenciales para garantizar un ascenso y descenso exitosos, debido a que existe una alta convección térmica que generará estrés al sistema y además la mayor parte de la misión se efectúa en temperaturas bajo cero oscilando de la temperatura ambiente a -56.6 °C. Además, la variación mínima en la gravedad a lo largo de la trayectoria del globo sonda plantea una importante implicación para qué se puede considerarse constante si se desea, ya que  su cambio fue a partir de la gravedad nominal a  la variación mínima del -0.93\% respecto a la nominal. La asimetría temporal en la duración de la misión, con un 75\% del tiempo total dedicado al ascenso y un 25\% al descenso, resalta la necesidad de considerar este tiempo en la planificación y un diseño específico para la recuperación de la sonda. Estos hallazgos, derivados del análisis de datos, proporcionan una base sólida para el diseño y la planificación de futuras misiones de globo sonda, mejorando significativamente la comprensión y capacidad de abordar los desafíos inherentes a este tipo de misones aeroespaciales.
+    \item En el dimensionamiento del subsistema de navegación, se ha empleado un enfoque de prototipado rápido y modular, aprovechando las comunidades de hardware abierto. Es crucial resaltar que las consideraciones relacionadas con la atmósfera desempeñan un papel fundamental en la selección de componentes tecnológicos, ya que tanto la presión como la temperatura condicionan los requisitos de la misión.
+\newpage
+    \item  La simulación ha demostrado un rendimiento satisfactorio en la descripción de la trayectoria del globo sonda, proporcionando condiciones relevantes para su desarrollo. Es esencial destacar que el simulador representa un paso inicial y está sujeto a ciertas limitaciones derivadas de las suposiciones realizadas. Además, el modelo se ve restringido por la disponibilidad de datos en tiempo real, ya que Python obtiene información del viento a través de la librería `getgfs`, basándose en datos de la NOAA y el modelo numérico GFS con una capacidad de consulta limitada hasta una semana en el pasado. Por otra parte, la selección de Python como nuestro lenguaje de programación, mostró su notable flexibilidad, portabilidad y accesibilidad, en comparación con los lenguajes académicos tradicionales como MATLAB. Es relevante mencionar que Python no requiere licencias, lo que lo convierte en una herramienta altamente conveniente para nuestros fines.
+\end{itemize}
+
+A pesar de ser un estudio preliminar con tecnología introductoria, se lograron alcanzar los objetivos establecidos, brindando una visión inicial de la temática estudiada. 
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Trabajo futuro} \label{sct:resultados_trabajofuturo}
+
+A continuación, se presentan sugerencias y recomendaciones que podrían considerarse en futuros trabajos, basadas en los hallazgos y limitaciones del presente estudio. A continuación, reflexionamos sobre estas recomendaciones:
+
+\subsection{Simulador}
+
+\begin{itemize}
+    \item En el simulador se utilizó un modelo atmosférico simplificado, el modelo ISA, y se asumió un día aleatorio que involucraba un acontecimiento típico de la sonda en su trayectoria y  a partir de esta asunción se hizo un dimensionamiento del subsistema de navegación el cual se tiene que complementar con medidas de protección y estructurales. Sin embargo, para obtener datos más realistas, se sugiere desarrollar simulaciones en diversos escenarios y condiciones climáticas utilizando datos proporcionados por la NOAA a través de su modelo GFS, incluyendo información sobre humedad, vientos,  presión y temperatura, además de corregir la implementación de los vientos en el simulador. Esta conexión con la NOAA está respaldada por una amplia documentación que válida su factibilidad en el desarrollo \cite{grid_python, consumo_datos_NOAA, info_acceso_NOAA, explicacion_consumo_datos_NOAA} y  el tratamiento de los datos se soluciona haciendo una interpolación multivariable, tal como se hizo en este trabajo haciendo un paralelepípedo con interpolación múltiple y multivariable \cite{spain_simulador}.  Luego de todo lo anterior,  se debe de hacer un análisis temporal con un simulador más completo y datos más realistas. Además, se puede desarrollar una interfaz gráfica de usuario para facilitar la utilización del simulador, brindando mayor accesibilidad y una experiencia más amigable.
+
+    \item El simulador debe hacer cálculos de peso que podrá soportar automáticamente, para efectos prácticos, acá en esta simulación se hizo con un peso de antemano, sé sabia que existía flotabilidad. Además, los cálculos se podría hacer aún más realistas considerando 6 grados de libertad y una matriz inercial para el sistema,  y así, se deja de lado el punto de masa con tres grados de libertad desarrollado en este trabajo.
+
+    \item Comparar datos del simulador con datos reales de vuelo mejora la descripción de la trayectoria. Esto permite agregar nuevos modelos al simulador, aumentando la precisión, como se menciona en las referencias y se hace en \cite{simulador_chino, parachute_6DOF, paracaidas_simplificado_futuro}. 
+
+\end{itemize}
+
+\newpage
+
+A continuación se presenta un resumen de las variables utilizadas para ser punto de partida para otros trabajos:
+
+
+\begin{enumerate}
+    \item \textbf{Tiempo (\(t\)):} Unidad de sucesos que describe la trayectoria de ascenso y descenso.
+    
+    \item \textbf{Posición Geográfica:}
+    \begin{itemize}
+        \item \textbf{Latitud (\(\phi\)):} Coordenada norte-sur donde se ubica la sonda en la superficie de la Tierra.
+        \item \textbf{Longitud (\(\lambda\)):} Coordenada este-oeste donde se ubica la sonda en la superficie de la Tierra.
+        \item \textbf{Altitud (\(z\)):} Elevación vertical sobre la superficie de la Tierra donde se ubica la sonda.
+    \end{itemize}
+    
+    \item \textbf{Velocidades:}
+    \begin{itemize}
+        \item \textbf{Velocidad Vertical (\(\frac{dz}{dt}\)):} Cambio de posición vertical de la sonda por unidad de tiempo.
+        \item \textbf{Velocidad del Viento \(U\):} Componente de viento paralela a la latitud (positiva de oeste a este).
+        \item \textbf{Velocidad del Viento \(V\):} Componente de viento paralela a la longitud (positiva de sur a norte).
+    \end{itemize}
+    
+    \item \textbf{Propiedades Atmosféricas:}
+    \begin{itemize}
+        \item \textbf{Temperatura:} Temperatura atmosférica basada en ISA a lo largo de la trayectoria.
+        \item \textbf{Presión:} Presión atmosférica basada en ISA a lo largo de la trayectoria.
+        \item \textbf{Densidad:} Densidad atmosférica a lo largo de la trayectoria, calculado con la temperatura y presión de la ISA.
+        \item \textbf{Gravedad:} Intensidad del campo gravitatorio en función de la altitud.
+    \end{itemize}
+    
+    \item \textbf{Dimensión del Globo:}
+    \begin{itemize}
+        \item \textbf{Diámetro del Globo:} Longitud transversal del globo utilizado.
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+\subsection{Subsistema de Navegación}
+
+\begin{itemize}
+    \item Se recomienda realizar pruebas simulando las condiciones reales de la misión en los equipos tecnológicos para evaluar su funcionalidad. Posteriormente, se puede considerar enviar las tecnologías desarrolladas a fabricantes de PCB como Advanced Circuits, PCBWay y JLPCB, quienes ofrecen flexibilidad y personalización en la impresión de tarjetas.
+    \item Es imprescindible analizar la integración con el resto de subsistemas electrónicos, considerando los protocolos de comunicación, el cableado de alimentación, interferencias y la seguridad operativa de las misiones.
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
